@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - GitHub search
 shortTitle: 搜索查询故障排除

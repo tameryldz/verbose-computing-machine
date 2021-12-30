@@ -10,7 +10,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 shortTitle: Definir o seu nome de usuário
 ---
 

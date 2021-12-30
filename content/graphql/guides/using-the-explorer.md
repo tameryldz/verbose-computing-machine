@@ -5,7 +5,6 @@ redirect_from:
   - /v4/guides/using-the-explorer
 versions:
   fpt: '*'
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 topics:
