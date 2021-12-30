@@ -20,6 +20,7 @@ shortTitle: JavaScript action
 
 {% data reusables.actions.enterprise-beta %}
 {% data reusables.actions.enterprise-github-hosted-runners %}
+{% data reusables.actions.ae-beta %}
 
 ## Introduction
 
@@ -47,13 +48,13 @@ Before you begin, you'll need to download Node.js and create a public {% data va
 
 1. From your terminal, change directories into your new repository.
 
-  ```shell{:copy}
+  ```shell
   cd hello-world-javascript-action
   ```
 
 1. From your terminal, initialize the directory with npm to generate a `package.json` file.
 
-  ```shell{:copy}
+  ```shell
   npm init -y
   ```
 
@@ -61,7 +62,7 @@ Before you begin, you'll need to download Node.js and create a public {% data va
 
 Create a new file named `action.yml` in the `hello-world-javascript-action` directory with the following example code. For more information, see "[Metadata syntax for {% data variables.product.prodname_actions %}](/actions/creating-actions/metadata-syntax-for-github-actions)."
 
-```yaml{:copy}
+```yaml
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
@@ -91,7 +92,7 @@ The toolkit offers more than the `core` and `github` packages. For more informat
 
 At your terminal, install the actions toolkit `core` and `github` packages.
 
-```shell{:copy}
+```shell
 npm install @actions/core
 npm install @actions/github
 ```
@@ -107,7 +108,7 @@ GitHub Actions provide context information about the webhook event, Git refs, wo
 Add a new file called `index.js`, with the following code.
 
 {% raw %}
-```javascript{:copy}
+```javascript
 const core = require('@actions/core');
 const github = require('@actions/github');
 
@@ -127,6 +128,7 @@ try {
 {% endraw %}
 
 If an error is thrown in the above `index.js` example, `core.setFailed(error.message);` uses the actions toolkit [`@actions/core`](https://github.com/actions/toolkit/tree/main/packages/core) package to log a message and set a failing exit code. For more information, see "[Setting exit codes for actions](/actions/creating-actions/setting-exit-codes-for-actions)."
+
 
 ## Creating a README
 
@@ -173,7 +175,8 @@ From your terminal, commit your `action.yml`, `index.js`, `node_modules`, `packa
 
 It's best practice to also add a version tag for releases of your action. For more information on versioning your action, see "[About actions](/actions/automating-your-workflow-with-github-actions/about-actions#using-release-management-for-actions)."
 
-```shell{:copy}
+
+```shell
 git add action.yml index.js node_modules/* package.json package-lock.json README.md
 git commit -m "My first action is ready"
 git tag -a -m "My first action release" v1.1
@@ -218,7 +221,7 @@ This example demonstrates how your new public action can be run from within an e
 Copy the following YAML into a new file at `.github/workflows/main.yml`, and update the `uses: octocat/hello-world-javascript-action@v1.1` line with your username and the name of the public repository you created above. You can also replace the `who-to-greet` input with your name.
 
 {% raw %}
-```yaml{:copy}
+```yaml
 on: [push]
 
 jobs:
@@ -245,7 +248,7 @@ Copy the workflow code into a `.github/workflows/main.yml` file in your action's
 
 {% raw %}
 **.github/workflows/main.yml**
-```yaml{:copy}
+```yaml
 on: [push]
 
 jobs:
@@ -272,7 +275,7 @@ From your repository, click the **Actions** tab, and select the latest workflow 
 
 {% ifversion fpt or ghes > 3.0 or ghae or ghec %}
 ![A screenshot of using your action in a workflow](/assets/images/help/repository/javascript-action-workflow-run-updated-2.png)
-{% elsif ghes %}
+{% elsif ghes > 2.22 %}
 ![A screenshot of using your action in a workflow](/assets/images/help/repository/javascript-action-workflow-run-updated.png)
 {% else %}
 ![A screenshot of using your action in a workflow](/assets/images/help/repository/javascript-action-workflow-run.png)

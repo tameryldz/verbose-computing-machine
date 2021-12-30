@@ -5,7 +5,6 @@ intro: '{% data variables.product.prodname_codespaces %} がアクセスでき�
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Codespaces
   - Security

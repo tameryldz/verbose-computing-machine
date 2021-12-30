@@ -6,7 +6,6 @@ redirect_from:
   - /developers/github-marketplace/about-marketplace-badges
 versions:
   fpt: '*'
-  ghec: '*'
 ---
 
 ## 对于 GitHub 应用程序

@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from 'uuid'
-import { hydroNames } from '../lib/schema-event.js'
 
 export default function recordRedirects(req, res, next) {
   if (!req.hydro.maySend()) return next()
@@ -7,7 +6,7 @@ export default function recordRedirects(req, res, next) {
   res.on('finish', async function recordRedirect() {
     // We definitely don't want 304
     if (![301, 302, 303, 307, 308].includes(res.statusCode)) return
-    const schemaName = hydroNames.redirect
+    const schemaName = req.hydro.schemas.redirect
     const redirectEvent = {
       context: {
         user: req.cookies['_docs-events'] || uuidv4(),
@@ -20,11 +19,8 @@ export default function recordRedirects(req, res, next) {
       redirect_from: req.originalUrl,
       redirect_to: res.get('location'),
     }
-    try {
-      await req.hydro.publish(schemaName, redirectEvent)
-    } catch (err) {
-      console.error('Failed to record redirect to Hydro', err)
-    }
+    const hydroRes = await req.hydro.publish(schemaName, redirectEvent)
+    if (!hydroRes.ok) console.log('Failed to record redirect to Hydro')
   })
 
   return next()
