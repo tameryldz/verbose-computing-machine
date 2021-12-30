@@ -9,7 +9,6 @@ redirect_from:
 product: '{% data reusables.gated-features.pages %}'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Pages
 shortTitle: Agregar un tema al sitio de Páginas

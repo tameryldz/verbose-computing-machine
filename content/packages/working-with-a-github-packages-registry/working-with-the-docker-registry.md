@@ -36,6 +36,12 @@ Docker images previously stored in the Docker registry are being automatically m
 
 When installing or publishing a Docker image, the Docker registry does not currently support foreign layers, such as Windows images.
 
+{% ifversion ghes = 2.22 %}
+
+Before you can use the Docker registry on {% data variables.product.prodname_registry %}, the site administrator for {% data variables.product.product_location %} must enable Docker support and subdomain isolation for your instance. For more information, see "[Managing GitHub Packages for your enterprise](/enterprise/admin/packages)."
+
+{% endif %}
+
 ## Authenticating to {% data variables.product.prodname_registry %}
 
 {% data reusables.package_registry.authenticate-packages %}
@@ -59,7 +65,7 @@ To keep your credentials secure, we recommend you save your personal access toke
 {% endif %}
 
 {% ifversion ghes or ghae %}
-{% ifversion ghes %}
+{% ifversion ghes > 2.22 %}
 If your instance has subdomain isolation enabled:
 {% endif %}
 {% raw %}
@@ -67,7 +73,7 @@ If your instance has subdomain isolation enabled:
  $ cat <em>~/TOKEN.txt</em> | docker login docker.HOSTNAME -u <em>USERNAME</em> --password-stdin
 ```
 {% endraw %}
-{% ifversion ghes %}
+{% ifversion ghes > 2.22 %}
 If your instance has subdomain isolation disabled:
 
 {% raw %}
@@ -110,13 +116,13 @@ For more information, see "[Docker login](https://docs.docker.com/engine/referen
   $ docker tag <em>IMAGE_ID</em> docker.pkg.github.com/<em>OWNER/REPOSITORY/IMAGE_NAME:VERSION</em>
   ```
   {% else %}
-  {% ifversion ghes %}
+  {% ifversion ghes > 2.22 %}
   If your instance has subdomain isolation enabled:
   {% endif %}
   ```shell
   $ docker tag <em>IMAGE_ID</em> docker.<em>HOSTNAME/OWNER/REPOSITORY/IMAGE_NAME:VERSION</em>
   ```
-  {% ifversion ghes %}
+  {% ifversion ghes > 2.22 %}
   If your instance has subdomain isolation disabled:
   ```shell
   $ docker tag <em>IMAGE_ID</em> <em>HOSTNAME/OWNER/REPOSITORY/IMAGE_NAME:VERSION</em>
@@ -129,13 +135,13 @@ For more information, see "[Docker login](https://docs.docker.com/engine/referen
   $ docker build -t docker.pkg.github.com/<em>OWNER/REPOSITORY/IMAGE_NAME:VERSION</em> <em>PATH</em>
   ```
   {% else %}
-  {% ifversion ghes %}
+  {% ifversion ghes > 2.22 %}
   If your instance has subdomain isolation enabled:
   {% endif %}
   ```shell
   $ docker build -t docker.<em>HOSTNAME/OWNER/REPOSITORY/IMAGE_NAME:VERSION</em> <em>PATH</em>
   ```
-  {% ifversion ghes %}
+  {% ifversion ghes > 2.22 %}
   If your instance has subdomain isolation disabled:
   ```shell
   $ docker build -t <em>HOSTNAME/OWNER/REPOSITORY/IMAGE_NAME:VERSION</em> <em>PATH</em>
@@ -148,13 +154,13 @@ For more information, see "[Docker login](https://docs.docker.com/engine/referen
   $ docker push docker.pkg.github.com/<em>OWNER/REPOSITORY/IMAGE_NAME:VERSION</em>
   ```
   {% else %}
-  {% ifversion ghes %}
+  {% ifversion ghes > 2.22 %}
   If your instance has subdomain isolation enabled:
   {% endif %}
   ```shell
   $ docker push docker.<em>HOSTNAME/OWNER/REPOSITORY/IMAGE_NAME:VERSION</em>
   ```
-  {% ifversion ghes %}
+  {% ifversion ghes > 2.22 %}
   If your instance has subdomain isolation disabled:
   ```shell
   $ docker push <em>HOSTNAME/OWNER/REPOSITORY/IMAGE_NAME:VERSION</em>
@@ -169,7 +175,7 @@ For more information, see "[Docker login](https://docs.docker.com/engine/referen
 
 ### Example publishing a Docker image
 
-{% ifversion ghes %}
+{% ifversion ghes > 2.22 %}
 These examples assume your instance has subdomain isolation enabled.
 {% endif %}
 
@@ -241,13 +247,13 @@ $ docker pull docker.pkg.github.com/<em>OWNER/REPOSITORY/IMAGE_NAME:TAG_NAME</em
 ```
 {% else %}
 <!--Versioning out this "subdomain isolation enabled" line because it's the only option for GHES 2.22 so it can be misleading.-->
-{% ifversion ghes %}
+{% ifversion ghes > 2.22 %}
 If your instance has subdomain isolation enabled:
 {% endif %}
 ```shell
 $ docker pull docker.<em>HOSTNAME/OWNER/REPOSITORY/IMAGE_NAME:TAG_NAME</em>
 ```
-{% ifversion ghes %}
+{% ifversion ghes > 2.22 %}
 If your instance has subdomain isolation disabled:
 ```shell
 $ docker pull <em>HOSTNAME/OWNER/REPOSITORY/IMAGE_NAME:TAG_NAME</em>

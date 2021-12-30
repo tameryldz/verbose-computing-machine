@@ -1,22 +1,21 @@
 ---
-title: Managing subscriptions and notifications on GitHub
-intro: 'You can specify how to receive notifications, the repositories you are interested in, and the types of activity you want to hear about.'
+title: Administrar suscripciones y notificaciones en GitHub
+intro: 'Puedes especificar cómo recibir notificciones, los repositorios que te interesan y los tipos de actividad de la cual quieres tener noticias.'
 redirect_from:
-  - /categories/76/articles
-  - /categories/notifications
+  - /categories/76/articles/
+  - /categories/notifications/
   - /categories/receiving-notifications-about-activity-on-github
   - /github/managing-subscriptions-and-notifications-on-github
 versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Notifications
 children:
   - /setting-up-notifications
   - /viewing-and-triaging-notifications
   - /managing-subscriptions-for-activity-on-github
-shortTitle: Subscriptions & notifications
+shortTitle: Suscripciones & notificaciones
 ---
 

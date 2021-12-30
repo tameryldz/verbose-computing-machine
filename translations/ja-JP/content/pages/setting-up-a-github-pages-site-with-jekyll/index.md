@@ -1,8 +1,8 @@
 ---
-title: Setting up a GitHub Pages site with Jekyll
-intro: 'You can use Jekyll, a popular static site generator, to further customize your {% data variables.product.prodname_pages %} site.'
+title: Jekyll を使用して GitHub Pages サイトを設定する
+intro: '静的サイトジェネレータとして広く利用されている Jekyll を使用して、{% data variables.product.prodname_pages %} サイトをさらにカスタマイズすることができます。'
 redirect_from:
-  - /articles/using-jekyll-with-pages
+  - /articles/using-jekyll-with-pages/
   - /articles/using-jekyll-as-a-static-site-generator-with-github-pages
   - /articles/setting-up-a-github-pages-site-with-jekyll
   - /github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll
@@ -11,7 +11,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Pages
 children:
@@ -23,6 +22,6 @@ children:
   - /adding-a-theme-to-your-github-pages-site-using-jekyll
   - /about-jekyll-build-errors-for-github-pages-sites
   - /troubleshooting-jekyll-build-errors-for-github-pages-sites
-shortTitle: Set up site with Jekyll
+shortTitle: Jekyllでのサイトのセットアップ
 ---
 
