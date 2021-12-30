@@ -8,16 +8,13 @@ versions:
 topics:
   - Codespaces
 children:
-  - /codespaces-lifecycle
   - /creating-a-codespace
   - /developing-in-a-codespace
   - /using-source-control-in-your-codespace
   - /using-codespaces-for-pull-requests
   - /deleting-a-codespace
   - /forwarding-ports-in-your-codespace
-  - /default-environment-variables-for-your-codespace
-  - /connecting-to-a-private-network
+  - /changing-the-machine-type-for-your-codespace
   - /using-codespaces-in-visual-studio-code
-  - /using-codespaces-with-github-cli
 ---
  

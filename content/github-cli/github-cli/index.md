@@ -14,4 +14,3 @@ children:
   - /using-github-cli-extensions
   - /github-cli-reference
 ---
-

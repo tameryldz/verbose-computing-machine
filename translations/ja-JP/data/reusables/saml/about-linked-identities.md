@@ -1,3 +1,3 @@
-You can view the single sign-on identity that a member has linked to their account on {% data variables.product.product_location %}.
+メンバーが自分の{% data variables.product.product_name %}アカウントにリンクしたシングルサインオンのアイデンティティを見ることができます。
 
-If a member links the wrong identity to their account on {% data variables.product.product_location %}, you can revoke the linked identity to allow the member to try again.
+メンバーが誤ったアイデンティティを{% data variables.product.product_name %}アカウントにリンクしている場合、リンクされたアイデンティティを取り消してメンバーにやり直してもらうことができます。

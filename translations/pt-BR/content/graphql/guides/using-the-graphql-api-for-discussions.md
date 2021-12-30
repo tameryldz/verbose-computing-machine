@@ -1,6 +1,6 @@
 ---
 title: Usar a API do GraphQL para discussões
-intro: 'Aprenda a usar a API do GraphQL de {% data variables.product.prodname_discussions %}.'
+intro: 'Learn how to use the {% data variables.product.prodname_discussions %} GraphQL API.'
 versions:
   fpt: '*'
 shortTitle: Usar o gráfico para Discussões
