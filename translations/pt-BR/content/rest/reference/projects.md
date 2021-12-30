@@ -1,13 +1,12 @@
 ---
 title: Projetos
-intro: 'A API dos Projetos permite que você crie, liste, atualize, exclua e personalize projetos em um repositório.'
+intro: 'The Projects API lets you create, list, update, delete and customize projects in a repository.'
 redirect_from:
   - /v3/projects
 versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - API
 miniTocMaxHeadingLevel: 3

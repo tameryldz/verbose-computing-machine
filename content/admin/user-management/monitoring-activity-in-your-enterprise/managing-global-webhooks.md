@@ -1,15 +1,15 @@
 ---
 title: Managing global webhooks
 shortTitle: Manage global webhooks
-intro: You can configure global webhooks to notify external web servers when events occur within your enterprise.
-permissions: Enterprise owners can manage global webhooks for an enterprise account.
+intro: 'You can configure global webhooks to notify external web servers when events occur within your enterprise.'
+permissions: 'Enterprise owners can manage global webhooks for an enterprise account.'
 redirect_from:
   - /enterprise/admin/user-management/about-global-webhooks
   - /enterprise/admin/user-management/managing-global-webhooks
   - /admin/user-management/managing-global-webhooks
   - /admin/user-management/managing-users-in-your-enterprise/managing-global-webhooks
   - /github/setting-up-and-managing-your-enterprise/managing-organizations-in-your-enterprise-account/configuring-webhooks-for-organization-events-in-your-enterprise-account
-  - /articles/configuring-webhooks-for-organization-events-in-your-business-account
+  - /articles/configuring-webhooks-for-organization-events-in-your-business-account/
   - /articles/configuring-webhooks-for-organization-events-in-your-enterprise-account
   - /github/setting-up-and-managing-your-enterprise-account/configuring-webhooks-for-organization-events-in-your-enterprise-account
   - /github/setting-up-and-managing-your-enterprise/configuring-webhooks-for-organization-events-in-your-enterprise-account

@@ -1,6 +1,6 @@
 ---
 title: Enforcing policies for GitHub Actions in your enterprise
-intro: 'You can enforce policies for {% data variables.product.prodname_actions %} within your enterprise''s organizations, or allow policies to be set in each organization.'
+intro: "You can enforce policies for {% data variables.product.prodname_actions %} within your enterprise's organizations, or allow policies to be set in each organization."
 permissions: 'Enterprise owners can enforce policies for {% data variables.product.prodname_actions %} in an enterprise.'
 miniTocMaxHeadingLevel: 3
 redirect_from:
@@ -26,6 +26,7 @@ shortTitle: GitHub Actions policies
 ---
 
 {% data reusables.actions.enterprise-beta %}
+{% data reusables.actions.ae-beta %}
 
 ## About policies for {% data variables.product.prodname_actions %} in your enterprise
 
@@ -43,7 +44,7 @@ You can choose to disable {% data variables.product.prodname_actions %} for all 
 {% data reusables.actions.enterprise-actions-permissions %}
 1. Click **Save**.
 
-{% ifversion ghec or ghes or ghae %}
+{% ifversion ghec or ghes > 2.22 or ghae %}
 
 ### Allowing select actions to run
 
@@ -53,14 +54,14 @@ You can choose to disable {% data variables.product.prodname_actions %} for all 
 {% data reusables.enterprise-accounts.policies-tab %}
 {% data reusables.enterprise-accounts.actions-tab %}
 1. Under **Policies**, select **Allow select actions** and add your required actions to the list.
-   {%- ifversion ghes > 3.0 or ghae-issue-5094 %}
+   {%- ifversion ghes or ghae-issue-5094 %}
    ![Add actions to allow list](/assets/images/help/organizations/enterprise-actions-policy-allow-list.png)
    {%- elsif ghae %}
    ![Add actions to allow list](/assets/images/enterprise/github-ae/enterprise-actions-policy-allow-list.png)
    {%- endif %}
 {% endif %}
 
-{% ifversion ghec or ghes or ghae %}
+{% ifversion ghec or ghes > 2.22 or ghae %}
 
 ## Enforcing a policy for artifact and log retention in your enterprise
 
@@ -68,7 +69,8 @@ You can choose to disable {% data variables.product.prodname_actions %} for all 
 
 {% data reusables.actions.about-artifact-log-retention %}
 
-{% data reusables.enterprise-accounts.access-enterprise %}
+{% data reusables.enterprise_site_admin_settings.access-settings %}
+{% data reusables.enterprise_site_admin_settings.business %}
 {% data reusables.enterprise-accounts.policies-tab %}
 {% data reusables.enterprise-accounts.actions-tab %}
 {% data reusables.github-actions.change-retention-period-for-artifacts-logs  %}
@@ -94,7 +96,7 @@ You can enforce policies to control how {% data variables.product.prodname_actio
 
 {% endif %}
 
-{% ifversion ghec or ghes or ghae %}
+{% ifversion ghec or ghes > 2.22 or ghae %}
 
 ### Enforcing a policy for fork pull requests in private repositories
 
@@ -107,7 +109,7 @@ You can enforce policies to control how {% data variables.product.prodname_actio
 
 {% endif %}
 
-{% ifversion ghec or ghes > 3.1 or ghae %}
+{% ifversion ghec or ghes > 3.1 or ghae-next %}
 
 ## Enforcing a policy for workflow permissions in your enterprise
 
