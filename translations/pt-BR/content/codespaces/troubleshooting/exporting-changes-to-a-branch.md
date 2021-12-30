@@ -4,7 +4,6 @@ intro: Este artigo fornece etapas para exportar suas alterações de codespace p
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 type: reference
 topics:
   - Codespaces

@@ -4,7 +4,6 @@ intro: '変更が信頼できるソースからのものであることを他の
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Codespaces

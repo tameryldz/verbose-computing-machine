@@ -4,7 +4,6 @@ intro: 'Você pode permitir que {% data variables.product.company_short %} use o
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Codespaces

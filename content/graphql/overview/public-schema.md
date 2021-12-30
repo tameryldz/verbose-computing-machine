@@ -5,7 +5,6 @@ redirect_from:
   - /v4/public_schema
 versions:
   fpt: '*'
-  ghec: '*'
   ghes: '*'
   ghae: '*'
 topics:

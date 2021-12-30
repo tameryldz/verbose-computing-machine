@@ -4,7 +4,6 @@ intro: 'Você pode conversar com a comunidade e mantenedores em um fórum do rep
 permissions: 'People with read access to a repository can participate in discussions in the repository. {% data reusables.enterprise-accounts.emu-permission-interact %}'
 versions:
   fpt: '*'
-  ghec: '*'
 shortTitle: Participar da discussão
 ---
 
