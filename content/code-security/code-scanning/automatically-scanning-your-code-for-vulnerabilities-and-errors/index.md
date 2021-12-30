@@ -8,7 +8,7 @@ redirect_from:
   - /code-security/secure-coding/automatically-scanning-your-code-for-vulnerabilities-and-errors
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
   ghec: '*'
 topics:
@@ -19,10 +19,8 @@ children:
   - /triaging-code-scanning-alerts-in-pull-requests
   - /setting-up-code-scanning-for-a-repository
   - /managing-code-scanning-alerts-for-your-repository
-  - /tracking-code-scanning-alerts-in-issues-using-task-lists
   - /configuring-code-scanning
   - /about-code-scanning-with-codeql
-  - /recommended-hardware-resources-for-running-codeql
   - /configuring-the-codeql-workflow-for-compiled-languages
   - /troubleshooting-the-codeql-workflow
   - /running-codeql-code-scanning-in-a-container

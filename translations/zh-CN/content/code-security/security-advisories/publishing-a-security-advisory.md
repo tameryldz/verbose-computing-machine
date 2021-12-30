@@ -7,7 +7,6 @@ redirect_from:
   - /github/managing-security-vulnerabilities/publishing-a-security-advisory
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Security advisories
@@ -76,7 +75,7 @@ shortTitle: 发布咨询意见
 
 {% data reusables.repositories.github-reviews-security-advisories %}
 
-## 申请 CVE 识别号（可选）
+## Requesting a CVE identification number (Optional)
 
 {% data reusables.repositories.request-security-advisory-cve-id %} 更多信息请参阅“[关于 {% data variables.product.prodname_security_advisories %}](/github/managing-security-vulnerabilities/about-github-security-advisories#cve-identification-numbers)”。
 
