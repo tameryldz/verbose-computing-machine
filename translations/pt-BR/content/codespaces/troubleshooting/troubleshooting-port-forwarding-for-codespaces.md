@@ -4,7 +4,6 @@ intro: Etapas de solução de problemas para problemas comuns de encaminhamento 
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 type: reference
 topics:
   - Codespaces

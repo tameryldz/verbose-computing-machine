@@ -6,7 +6,7 @@ redirect_from:
   - /actions/guides/building-and-testing-nodejs-or-python
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=2.22'
   ghae: '*'
   ghec: '*'
 type: tutorial
@@ -14,5 +14,6 @@ topics:
   - CI
 ---
 
+{% data reusables.actions.ae-beta %}
 
 <!-- This article is specially rendered via the pages/ directory -->

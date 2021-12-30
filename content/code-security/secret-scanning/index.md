@@ -7,7 +7,7 @@ redirect_from:
   - /code-security/secret-security
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
   ghec: '*'
 topics:

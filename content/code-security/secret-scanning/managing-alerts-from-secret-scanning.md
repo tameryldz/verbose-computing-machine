@@ -7,7 +7,7 @@ redirect_from:
   - /code-security/secret-security/managing-alerts-from-secret-scanning
 versions:
   fpt: '*'
-  ghes: '*'
+  ghes: '>=3.0'
   ghae: '*'
   ghec: '*'
 type: how_to
@@ -25,28 +25,28 @@ shortTitle: Manage secret alerts
 
 {% data reusables.repositories.navigate-to-repo %}
 {% data reusables.repositories.sidebar-security %}
-1. In the left sidebar, click **Secret scanning alerts**.
-   {% ifversion fpt or ghes or ghec %}
+3. In the left sidebar, click **Secret scanning alerts**. 
+   {% ifversion fpt or ghes > 2.22 or ghec %}
    !["Secret scanning alerts" tab](/assets/images/help/repository/sidebar-secrets.png)
    {% endif %}
    {% ifversion ghae %}
    !["Secret scanning alerts" tab](/assets/images/enterprise/github-ae/repository/sidebar-secrets-ghae.png)
    {% endif %}
-1. Under "Secret scanning" click the alert you want to view.
+4. Under "Secret scanning" click the alert you want to view.
    {% ifversion fpt or ghec %}
    ![List of alerts from secret scanning](/assets/images/help/repository/secret-scanning-click-alert.png)
    {% endif %}
-   {% ifversion ghes %}
+   {% ifversion ghes > 2.22 %}
    ![List of alerts from secret scanning](/assets/images/help/repository/secret-scanning-click-alert-ghe.png)
    {% endif %}
    {% ifversion ghae %}
    ![List of alerts from secret scanning](/assets/images/enterprise/github-ae/repository/secret-scanning-click-alert-ghae.png)
    {% endif %}
-1. Optionally, select the {% ifversion fpt or ghec %}"Close as"{% elsif ghes or ghae %}"Mark as"{% endif %} drop-down menu and click a reason for resolving an alert.
+5. Optionally, use the "Mark as" drop-down menu and click a reason for resolving an alert.
    {% ifversion fpt or ghec %}
    ![Drop-down menu for resolving an alert from secret scanning](/assets/images/help/repository/secret-scanning-resolve-alert.png)
    {% endif %}
-   {% ifversion ghes or ghae %}
+   {% ifversion ghes > 2.22 or ghae %}
    ![Drop-down menu for resolving an alert from secret scanning](/assets/images/help/repository/secret-scanning-resolve-alert-ghe.png)
    {% endif %}
 

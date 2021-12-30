@@ -1,11 +1,10 @@
 ---
 title: 查看代码空间的安全日志
-shortTitle: 安全日志
+shortTitle: Security logs
 intro: '您可以使用安全日志查看与 {% data variables.product.prodname_codespaces %} 相关的所有操作。'
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Codespaces
   - Developer
@@ -24,4 +23,4 @@ topics:
 
 ## 延伸阅读
 
-- "[查看 {% data variables.product.prodname_codespaces %} 的组织审核日志](/codespaces/managing-codespaces-for-your-organization/reviewing-your-organizations-audit-logs-for-codespaces)"
+- "[Reviewing your organization's audit logs for {% data variables.product.prodname_codespaces %}](/codespaces/managing-codespaces-for-your-organization/reviewing-your-organizations-audit-logs-for-codespaces)"
