@@ -1,6 +1,6 @@
 ---
 title: Pesquisar no GitHub
-intro: Você pode usar os qualificadores para restringir sua pesquisa e focar em categorias específicas de informação.
+intro: You can use qualifiers to narrow your search and focus on specific categories of information.
 redirect_from:
   - /articles/searching-on-github
   - /github/searching-for-information-on-github/searching-on-github
@@ -8,7 +8,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - GitHub search
 children:

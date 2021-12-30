@@ -8,7 +8,6 @@ redirect_from:
 permissions: 'Organization owners can set up {% data variables.product.prodname_sponsors %} for an organization.'
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Organizations
@@ -80,7 +79,7 @@ Open Collective を使用して Stripe Connect を設定する方法について
 
 ## {% data variables.product.prodname_dotcom %} アカウントで 2 要素認証 (2FA) を有効にする
 
-Before your organization can become a sponsored organization, you must enable 2FA for your account on {% data variables.product.product_location %}. 詳しい情報については「[2 要素認証の設定](/articles/configuring-two-factor-authentication)」を参照してください。
+Organization がスポンサード Organization になるには、{% data variables.product.product_name %} アカウントで 2FA を有効化する必要があります。 詳しい情報については「[2 要素認証の設定](/articles/configuring-two-factor-authentication)」を参照してください。
 
 ## {% data variables.product.prodname_dotcom %} に申請をサブミットして承認を求める
 

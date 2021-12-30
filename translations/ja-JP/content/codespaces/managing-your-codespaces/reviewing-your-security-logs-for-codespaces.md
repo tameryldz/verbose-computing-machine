@@ -5,7 +5,6 @@ intro: 'セキュリティログを使用して、{% data variables.product.prod
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - Codespaces
   - Developer
