@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - GitHub search
 ---
@@ -21,7 +20,7 @@ topics:
 1. 导航到 https://github.com/search。
 2. 输入主题关键词。 ![搜索字段](/assets/images/help/search/search-field.png)
 3. 在左侧边栏中，要将搜索范围缩小到主题，请单击 **Topics（主题）**。
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
   ![主题侧菜单选项突出显示的 Jekyll 仓库搜索结果页面](/assets/images/help/search/topic-left-side-navigation-dotcom.png){% else %}
 ![Jekyll repository search results page on dotcom with topics side-menu option highlighted](/assets/images/help/search/topic-left-side-navigation.png){% endif %}
 

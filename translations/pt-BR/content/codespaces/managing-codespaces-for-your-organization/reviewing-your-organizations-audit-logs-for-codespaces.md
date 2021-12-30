@@ -5,7 +5,6 @@ intro: 'Você pode usar o log de auditoria para revisar todas as ações relacio
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Codespaces
