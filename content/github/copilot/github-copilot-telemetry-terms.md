@@ -6,7 +6,6 @@ redirect_from:
   - /github/copilot/telemetry-terms
 versions:
   fpt: '*'
-effectiveDate: '2021-10-04'
 ---
 
 ## Additional telemetry

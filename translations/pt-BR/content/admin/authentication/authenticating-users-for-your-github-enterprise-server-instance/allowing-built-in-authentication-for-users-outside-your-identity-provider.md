@@ -1,6 +1,6 @@
 ---
-title: Allowing built-in authentication for users outside your identity provider
-intro: 'You can configure built-in authentication to authenticate users who don''t have access to your identity provider that uses LDAP, SAML, or CAS.'
+title: Permitir a autenticação integrada para usuários de fora do provedor de identidade
+intro: 'Com a autenticação integrada, você pode autenticar usuários que não têm acesso ao seu provedor de identidade que usa LDAP, SAML ou CAS.'
 redirect_from:
   - /enterprise/admin/user-management/allowing-built-in-authentication-for-users-outside-your-identity-provider
   - /enterprise/admin/authentication/allowing-built-in-authentication-for-users-outside-your-identity-provider
@@ -13,47 +13,47 @@ topics:
   - Authentication
   - Enterprise
   - Identity
-shortTitle: Authentication outside IdP
+shortTitle: Autenticação fora do IdP
 ---
-## About built-in authentication for users outside your identity provider
 
-You can use built-in authentication for outside users when you are unable to add specific accounts to your identity provider (IdP), such as accounts for contractors or machine users. You can also use built-in authentication to access a fallback account if the identity provider is unavailable.  
+## Sobre a autenticação integrada para usuários de fora do provedor de identidade
 
-After built-in authentication is configured and a user successfully authenticates with SAML or CAS, they will no longer have the option to authenticate with a username and password. If a user successfully authenticates with LDAP, the credentials are no longer considered internal.
+É possível usar a autenticação integrada para usuários externos quando você não conseguir adicionar contas específicas ao seu provedor de identidade (IdP), como contas de contratados ou usuários de máquinas. Você também pode usar a autenticação integrada para acessar uma conta de fallback se o provedor de identidade não estiver disponível.
 
-Built-in authentication for a specific IdP is disabled by default.
+Após a configuração da autenticação integrada, quando um usuário se autenticar com êxito via SAML ou CAS, ele não poderá se autenticar com nome de usuário e senha. Se o usuário se autenticar com êxito via LDAP, as credenciais não serão mais consideradas internas.
+
+A autenticação integrada para um IdP específico fica desabilitada por padrão.
 
 {% warning %}
 
-**Warning:** If you disable built-in authentication, you must individually suspend any users that should no longer have access to the instance. For more information, see "[Suspending and unsuspending users](/enterprise/{{ currentVersion }}/admin/guides/user-management/suspending-and-unsuspending-users)."
+**Aviso:** se desabilitar a autenticação integrada, você terá que suspender individualmente todos os usuários que não devem mais ter acesso à instância. Para obter mais informações, consulte "[Suspender e cancelar a suspensão de usuários](/enterprise/{{ currentVersion }}/admin/guides/user-management/suspending-and-unsuspending-users)".
 
 {% endwarning %}
 
-## Configuring built-in authentication for users outside your identity provider
+## Configurar a autenticação integrada para usuários de fora do provedor de identidade
 
 {% data reusables.enterprise_site_admin_settings.access-settings %}
 {% data reusables.enterprise_site_admin_settings.management-console %}
 {% data reusables.enterprise_management_console.authentication %}
-4. Select your identity provider.
-  ![Select identity provider option](/assets/images/enterprise/management-console/identity-provider-select.gif)
-5. Select **Allow creation of accounts with built-in authentication**.
-  ![Select built-in authentication option](/assets/images/enterprise/management-console/built-in-auth-identity-provider-select.png)
-6. Read the warning, then click **Ok**.
+4. Selecione seu provedor de identidade. ![Opção Select identity provider (Selecionar provedor de identidade)
+](/assets/images/enterprise/management-console/identity-provider-select.gif)
+5. Selecione **Allow creation of accounts with built-in authentication** (Permitir a criação de contas com autenticação integrada). ![Opção Select built-in authentication (Selecionar autenticação integrada)](/assets/images/enterprise/management-console/built-in-auth-identity-provider-select.png)
+6. Leia o aviso e clique em **Ok**.
 
 {% data reusables.enterprise_user_management.two_factor_auth_header %}
 {% data reusables.enterprise_user_management.2fa_is_available %}
 
-## Inviting users outside your identity provider to authenticate to your instance
+## Convidar usuários de fora do provedor de identidade para autenticação na sua instância
 
-When a user accepts the invitation, they can use their username and password to sign in rather than signing in through the IdP.
+Quando aceitar o convite, o usuário poderá fazer login com seu próprio nome de usuário e senha, em vez de fazer login via IdP.
 
 {% data reusables.enterprise_site_admin_settings.sign-in %}
 {% data reusables.enterprise_site_admin_settings.access-settings %}
 {% data reusables.enterprise_site_admin_settings.invite-user-sidebar-tab %}
 {% data reusables.enterprise_site_admin_settings.invite-user-reset-link %}
 
-## Further reading
+## Leia mais
 
-- "[Using LDAP](/enterprise/admin/authentication/using-ldap)"
-- "[Using SAML](/enterprise/{{ currentVersion }}/admin/guides/user-management/using-saml)"
-- "[Using CAS](/enterprise/{{ currentVersion }}/admin/guides/user-management/using-cas)"
+- /enterprise/{{ page.version }}/admin/guides/user-management/using-ldap
+- [Usar SAML](/enterprise/{{ currentVersion }}/admin/guides/user-management/using-saml)
+- [Usar CAS](/enterprise/{{ currentVersion }}/admin/guides/user-management/using-cas)

@@ -3,14 +3,13 @@ title: Prebuilding Codespaces for your project
 intro: You can configure your project to prebuild a codespace automatically each time you push a change to your repository.
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Codespaces
   - Set up
   - Fundamentals
 product: '{% data reusables.gated-features.codespaces %}'
-shortTitle: Prebuild Codespaces
+shortTitle: Prebuilding Codespaces
 ---
 
 {% note %}

@@ -4,7 +4,6 @@ intro: Pasos de solución de problemas para los problemas comunes con los dotfil
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 type: reference
 topics:
   - Codespaces
