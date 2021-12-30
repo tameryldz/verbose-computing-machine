@@ -7,8 +7,8 @@ redirect_from:
   - /github/managing-security-vulnerabilities
 versions:
   fpt: '*'
-  ghes: '*'
-  ghae: issue-4864
+  ghes: '>=3.0'
+  ghae: "issue-4864"
   ghec: '*'
 topics:
   - Dependabot

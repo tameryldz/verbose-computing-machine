@@ -1,10 +1,8 @@
 ---
-title: Understanding your software supply chain
+title: Entender tu cadena de suministro de software
 versions:
   fpt: '*'
-  ghes: '*'
-  ghae: issue-4864
-  ghec: '*'
+  ghes: '>=3.0'
 topics:
   - Dependency graph
   - Dependencies
@@ -13,6 +11,6 @@ children:
   - /about-the-dependency-graph
   - /exploring-the-dependencies-of-a-repository
   - /about-dependency-review
-shortTitle: Understand your supply chain
+shortTitle: Entender la cadena de suministro
 ---
 
