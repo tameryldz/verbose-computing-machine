@@ -28,7 +28,6 @@ describe('webhook payloads', () => {
   test('have expected top-level keys', () => {
     payloadVersions.forEach((version) => {
       // todo: remove if check once we have API/webhook versions for ghec
-      // Docs Engineering issue: 979
       if (version !== 'ghec') {
         expect(version in webhookPayloads).toBe(true)
       }

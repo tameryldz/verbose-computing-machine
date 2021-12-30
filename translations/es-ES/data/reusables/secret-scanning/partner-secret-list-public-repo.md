@@ -35,7 +35,6 @@
 | Finicity                  | Clave de App de Finicity                                    |
 | Frame.io                  | Token Web de JSON de Frame.io                               |
 | Frame.io                  | Token de Desarrollador de Frame.io                          |
-| FullStory                 | Llave de la API de FullStory                                |
 | GitHub                    | Token de Acceso Personal de GitHub                          |
 | GitHub                    | Token de Acceso de OAuth para GitHub                        |
 | GitHub                    | Token de Actualización de GitHub                            |
@@ -55,7 +54,6 @@
 | Mailchimp                 | Clave de API de Mandrill                                    |
 | Mailgun                   | Clave de API de Mailgun                                     |
 | MessageBird               | Clave de API de MessageBird                                 |
-| Meta                      | Token de Acceso a Facebook                                  |
 | npm                       | Token de Acceso de npm                                      |
 | NuGet                     | Clave de API de NuGet                                       |
 | OpenAI                    | Clave de la API de OpenAI                                   |
@@ -75,8 +73,6 @@
 | Samsara                   | Token de API de Samsara                                     |
 | Samsara                   | Token de Acceso de OAuth de Samsara                         |
 | SendGrid                  | Clave de la API de SendGrid                                 |
-| Sendinblue                | Llave de la API de Sendinblue                               |
-| Sendinblue                | Llave SMTP de Sendinblue                                    |
 | Shopify                   | Secreto Compartid de la App de Shopify                      |
 | Shopify                   | Token de Acceso de Shopify                                  |
 | Shopify                   | Token de Acceso de la App Personalizada de Shopify          |
@@ -93,5 +89,4 @@
 | Tencent Cloud             | ID de Secreto de Tencent Cloud                              |
 | Twilio                    | Identificador de Secuencia de Cuenta de Twilio              |
 | Twilio                    | Clave de API de Twilio                                      |
-| Typeform                  | Token de acceso personal a Typeform                         |
 | Valour                    | Token de acceso a Valour                                    |

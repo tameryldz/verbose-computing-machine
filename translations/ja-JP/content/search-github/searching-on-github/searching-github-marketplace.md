@@ -3,7 +3,6 @@ title: GitHub Marketplace の検索
 intro: '{% data variables.product.prodname_marketplace %} で使用できるアプリケーションとアクションを検索できます。'
 versions:
   fpt: '*'
-  ghec: '*'
 topics:
   - GitHub search
 redirect_from:
