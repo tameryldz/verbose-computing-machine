@@ -23,10 +23,6 @@ import { supported, next, nextNext, deprecated } from '../../lib/enterprise-serv
 import { getLiquidConditionals } from '../../script/helpers/get-liquid-conditionals.js'
 import allowedVersionOperators from '../../lib/liquid-tags/ifversion-supported-operators.js'
 import semver from 'semver'
-import { jest } from '@jest/globals'
-import { getDiffFiles } from '../helpers/diff-files.js'
-
-jest.useFakeTimers('legacy')
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const enterpriseServerVersions = Object.keys(allVersions).filter((v) =>
@@ -281,15 +277,14 @@ if (!process.env.TEST_TRANSLATION) {
 } else {
   // get all translated markdown or yaml files by comparing files changed to main branch
   const changedFilesRelPaths = execSync(
-    'git -c diff.renameLimit=10000 diff --name-only origin/main',
+    'git -c diff.renameLimit=10000 diff --name-only origin/main | egrep "^translations/.*/.+.(yml|md)$"',
     { maxBuffer: 1024 * 1024 * 100 }
   )
     .toString()
     .split('\n')
-    .filter((p) => p.startsWith('translations') && (p.endsWith('.md') || p.endsWith('.yml')))
+  if (changedFilesRelPaths === '') process.exit(0)
 
-  // If there are no changed files, there's nothing to lint: signal a successful termination.
-  if (changedFilesRelPaths.length === 0) process.exit(0)
+  console.log('testing translations.')
 
   console.log(`Found ${changedFilesRelPaths.length} translated files.`)
 
@@ -359,53 +354,6 @@ function getContent(content) {
   if (typeof content === 'string') return content
   if (typeof content.description === 'string') return content.description
   return null
-}
-
-const diffFiles = getDiffFiles()
-
-// If present, and not empty, leverage it because in most cases it's empty.
-if (diffFiles.length > 0) {
-  // It's faster to do this once and then re-use over and over in the
-  // .filter() later on.
-  const only = new Set(
-    // If the environment variable encodes all the names
-    // with quotation marks, strip them.
-    // E.g. Turn `"foo" "bar"` into ['foo', 'bar']
-    // Note, this assumes no possible file contains a space.
-    diffFiles.map((name) => {
-      if (/^['"]/.test(name) && /['"]$/.test(name)) {
-        return name.slice(1, -1)
-      }
-      return name
-    })
-  )
-  const filterFiles = (tuples) =>
-    tuples.filter(
-      ([relativePath, absolutePath]) => only.has(relativePath) || only.has(absolutePath)
-    )
-  mdToLint = filterFiles(mdToLint)
-  ymlToLint = filterFiles(ymlToLint)
-  ghesReleaseNotesToLint = filterFiles(ghesReleaseNotesToLint)
-  ghaeReleaseNotesToLint = filterFiles(ghaeReleaseNotesToLint)
-  learningTracksToLint = filterFiles(learningTracksToLint)
-  featureVersionsToLint = filterFiles(featureVersionsToLint)
-}
-
-if (
-  mdToLint.length +
-    ymlToLint.length +
-    ghesReleaseNotesToLint.length +
-    ghaeReleaseNotesToLint.length +
-    learningTracksToLint.length +
-    featureVersionsToLint.length <
-  1
-) {
-  // With this in place, at least one `test()` is called and you don't
-  // get the `Your test suite must contain at least one test.` error
-  // from `jest`.
-  describe('deliberately do nothing', () => {
-    test('void', () => {})
-  })
 }
 
 describe('lint markdown content', () => {
@@ -674,28 +622,16 @@ describe('lint yaml content', () => {
   if (ymlToLint.length < 1) return
   describe.each(ymlToLint)('%s', (yamlRelPath, yamlAbsPath) => {
     let dictionary, isEarlyAccess, ifversionConditionals, ifConditionals
-    // This variable is used to determine if the file was parsed successfully.
-    // When `yaml.load()` fails to parse the file, it is overwritten with the error message.
-    // `false` is intentionally chosen since `null` and `undefined` are valid return values.
-    let dictionaryError = false
 
     beforeAll(async () => {
       const fileContents = await readFileAsync(yamlAbsPath, 'utf8')
-      try {
-        dictionary = yaml.load(fileContents, { filename: yamlRelPath })
-      } catch (error) {
-        dictionaryError = error
-      }
+      dictionary = yaml.load(fileContents, { filename: yamlRelPath })
 
       isEarlyAccess = yamlRelPath.split('/').includes('early-access')
 
       ifversionConditionals = getLiquidConditionals(fileContents, ['ifversion', 'elsif'])
 
       ifConditionals = getLiquidConditionals(fileContents, 'if')
-    })
-
-    test('it can be parsed as a single yaml document', () => {
-      expect(dictionaryError).toBe(false)
     })
 
     test('ifversion conditionals are valid in yaml', async () => {
@@ -914,19 +850,10 @@ describe('lint GHES release notes', () => {
   if (ghesReleaseNotesToLint.length < 1) return
   describe.each(ghesReleaseNotesToLint)('%s', (yamlRelPath, yamlAbsPath) => {
     let dictionary
-    let dictionaryError = false
 
     beforeAll(async () => {
       const fileContents = await readFileAsync(yamlAbsPath, 'utf8')
-      try {
-        dictionary = yaml.load(fileContents, { filename: yamlRelPath })
-      } catch (error) {
-        dictionaryError = error
-      }
-    })
-
-    it('can be parsed as a single yaml document', () => {
-      expect(dictionaryError).toBe(false)
+      dictionary = yaml.load(fileContents, { filename: yamlRelPath })
     })
 
     it('matches the schema', () => {
@@ -970,19 +897,10 @@ describe('lint GHAE release notes', () => {
   const currentWeeksFound = []
   describe.each(ghaeReleaseNotesToLint)('%s', (yamlRelPath, yamlAbsPath) => {
     let dictionary
-    let dictionaryError = false
 
     beforeAll(async () => {
       const fileContents = await readFileAsync(yamlAbsPath, 'utf8')
-      try {
-        dictionary = yaml.load(fileContents, { filename: yamlRelPath })
-      } catch (error) {
-        dictionaryError = error
-      }
-    })
-
-    it('can be parsed as a single yaml document', () => {
-      expect(dictionaryError).toBe(false)
+      dictionary = yaml.load(fileContents, { filename: yamlRelPath })
     })
 
     it('matches the schema', () => {
@@ -1033,19 +951,10 @@ describe('lint learning tracks', () => {
   if (learningTracksToLint.length < 1) return
   describe.each(learningTracksToLint)('%s', (yamlRelPath, yamlAbsPath) => {
     let dictionary
-    let dictionaryError = false
 
     beforeAll(async () => {
       const fileContents = await readFileAsync(yamlAbsPath, 'utf8')
-      try {
-        dictionary = yaml.load(fileContents, { filename: yamlRelPath })
-      } catch (error) {
-        dictionaryError = error
-      }
-    })
-
-    it('can be parsed as a single yaml document', () => {
-      expect(dictionaryError).toBe(false)
+      dictionary = yaml.load(fileContents, { filename: yamlRelPath })
     })
 
     it('matches the schema', () => {
@@ -1117,19 +1026,10 @@ describe('lint feature versions', () => {
   if (featureVersionsToLint.length < 1) return
   describe.each(featureVersionsToLint)('%s', (yamlRelPath, yamlAbsPath) => {
     let dictionary
-    let dictionaryError = false
 
     beforeAll(async () => {
       const fileContents = await readFileAsync(yamlAbsPath, 'utf8')
-      try {
-        dictionary = yaml.load(fileContents, { filename: yamlRelPath })
-      } catch (error) {
-        dictionaryError = error
-      }
-    })
-
-    it('can be parsed as a single yaml document', () => {
-      expect(dictionaryError).toBe(false)
+      dictionary = yaml.load(fileContents, { filename: yamlRelPath })
     })
 
     it('matches the schema', () => {

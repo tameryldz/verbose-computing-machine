@@ -5,7 +5,6 @@ intro: '您可以使用审核日志查看与 {% data variables.product.prodname_
 product: '{% data reusables.gated-features.codespaces %}'
 versions:
   fpt: '*'
-  ghec: '*'
 type: how_to
 topics:
   - Codespaces
@@ -23,4 +22,4 @@ topics:
 
 ## 延伸阅读
 
-- "[查看 {% data variables.product.prodname_codespaces %} 的安全日志](/codespaces/managing-your-codespaces/reviewing-your-security-logs-for-codespaces)"
+- "[Reviewing your security logs for {% data variables.product.prodname_codespaces %}](/codespaces/managing-your-codespaces/reviewing-your-security-logs-for-codespaces)"

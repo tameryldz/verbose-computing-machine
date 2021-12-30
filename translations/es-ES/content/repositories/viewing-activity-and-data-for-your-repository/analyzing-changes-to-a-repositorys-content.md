@@ -17,7 +17,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - Repositories
 shortTitle: Analizar cambios
@@ -45,7 +44,7 @@ El gráfico inferior muestra la cantidad promedio de confirmaciones por día de 
 
 El gráfico de frecuencia de código muestra las incorporaciones y eliminaciones de contenido de cada semana en el historial de un repositorio.
 
-{% ifversion fpt or ghec %}
+{% ifversion fpt %}
 
 ![Gráfico de frecuencia de código](/assets/images/help/graphs/repo_code_frequency_graph_dotcom.png)
 
