@@ -9,7 +9,6 @@ versions:
   fpt: '*'
   ghes: '*'
   ghae: '*'
-  ghec: '*'
 topics:
   - GitHub search
 ---
@@ -73,4 +72,4 @@ topics:
 ## 延伸阅读
 
 - "[About searching on {% data variables.product.prodname_dotcom %}](/search-github/getting-started-with-searching-on-github/about-searching-on-github)"
-- "[过滤和搜索议题和拉取请求](/issues/tracking-your-work-with-issues/filtering-and-searching-issues-and-pull-requests)"
+- "[Filtering and searching issues and pull requests](/issues/tracking-your-work-with-issues/filtering-and-searching-issues-and-pull-requests)"

@@ -157,6 +157,7 @@ You can enable {% data variables.product.prodname_discussions %} for your reposi
 ### {% ifversion fpt or ghec %}4.{% else %}3.{% endif %} Publishing and managing {% data variables.product.prodname_registry %} 
 {% data reusables.getting-started.packages %}
 
+{% ifversion fpt or ghae or ghes > 2.22 or ghec %}
 ## Part 5: Building securely on {% data variables.product.product_name %}
 {% data variables.product.product_name %} has a variety of security features that help keep code and secrets secure in repositories. Some features are available for all repositories, while others are only available for public repositories and repositories with a {% data variables.product.prodname_GH_advanced_security %} license. For an overview of {% data variables.product.product_name %} security features, see "[{% data variables.product.prodname_dotcom %} security features](/code-security/getting-started/github-security-features)."
 
@@ -164,6 +165,7 @@ You can enable {% data variables.product.prodname_discussions %} for your reposi
 As a repository administrator, you can secure your repositories by configuring repository security settings. These include managing access to your repository, setting a security policy, and managing dependencies. For public repositories, and for private repositories owned by organizations where {% data variables.product.prodname_GH_advanced_security %} is enabled, you can also configure code and secret scanning to automatically identify vulnerabilities and ensure tokens and keys are not exposed. 
 
 For more information on steps you can take to secure your repositories, see "[Securing your repository](/code-security/getting-started/securing-your-repository)."
+{% endif %}
 
 {% ifversion fpt or ghec %}
 ### 2. Managing your dependencies
@@ -172,7 +174,7 @@ A large part of building securely is maintaining your project's dependencies to 
 For more information, see "[Securing your software supply chain](/code-security/supply-chain-security)."
 {% endif %}
 
-## Part 6: Participating in {% data variables.product.prodname_dotcom %}'s community
+## Part {% ifversion ghes < 3.0 %}5:{% else %}6:{% endif %} Participating in {% data variables.product.prodname_dotcom %}'s community
 
 {% data reusables.getting-started.participating-in-community %}
 
@@ -182,18 +184,14 @@ For more information, see "[Securing your software supply chain](/code-security/
 ### 2. Interacting with {% data variables.product.prodname_gcf %}
 {% data reusables.support.ask-and-answer-forum %}
 
-### 3. Reading about {% data variables.product.product_name %} on {% data variables.product.prodname_docs %}
-
-{% data reusables.docs.you-can-read-docs-for-your-product %}
-
-### 4. Learning with {% data variables.product.prodname_learning %}
+### 3. Learning with {% data variables.product.prodname_learning %}
 {% data reusables.getting-started.learning-lab %}
 
 {% ifversion fpt or ghec %}
-### 5. Supporting the open source community
+### 4. Supporting the open source community
 {% data reusables.getting-started.sponsors %}
 
-### 6. Contacting {% data variables.contact.github_support %}
+### 5. Contacting {% data variables.contact.github_support %}
 {% data reusables.getting-started.contact-support %}
 
 {% ifversion fpt %}

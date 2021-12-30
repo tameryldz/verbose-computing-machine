@@ -3,7 +3,6 @@ title: Encontrar debates a lo largo de varios repositorios
 intro: 'Puedes acceder fácilmente a todos los debates que hayas creado, o en los que hayas participado, a lo largo de varios repositorios.'
 versions:
   fpt: '*'
-  ghec: '*'
 shortTitle: Encontrar debates
 ---
 
